@@ -19,9 +19,10 @@ const getResponse = (name: string): string => {
 	for (const category of Object.keys(responsesByCategory) as Array<
 		keyof typeof responsesByCategory
 	>) {
-		if (responsesByCategory[category].names.includes(name)) {
-			return responsesByCategory[category].response;
-		}
+		if ((responsesByCategory[category].names as readonly string[]).includes(name)) {
+	return responsesByCategory[category].response;
+}
+
 	}
 
 	return "Let's get to know each other first 😊 \n Tell me why you want to be my Valentine";

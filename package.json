@@ -6,13 +6,13 @@
 	"homepage": "https://jottiana.github.io/veux-tu-etre-mon-valentin-une-fois/",
 
 	"scripts": {
-		"predeploy": "npm run build && cp dist/index.html dist/404.html",
-		"deploy": "gh-pages -d dist",
 		"dev": "vite",
 		"build": "tsc -b && vite build",
 		"check": "biome check src",
 		"check:fix": "biome check --write src",
-		"preview": "vite preview"
+		"preview": "vite preview",
+		"predeploy": "npm run build",
+		"deploy": "gh-pages -d dist"
 	},
 	"dependencies": {
 		"@tailwindcss/vite": "^4.1.18",
