@@ -17,7 +17,6 @@ const getResponse = (name: string): string => {
 	for (const category of Object.keys(responsesByCategory) as Array<
 		keyof typeof responsesByCategory
 	>) {
-		// Fix TS: 'includes' trop strict à cause du `as const`
 		if (
 			(responsesByCategory[category].names as readonly string[]).includes(name)
 		) {
@@ -60,11 +59,9 @@ const Home = () => {
 			| React.MouseEvent<HTMLButtonElement>
 			| React.KeyboardEvent<HTMLInputElement>,
 	) => {
-		// ✅ Mobile: on enlève le focus pour éviter que Safari reste zoomé
 		if (event.currentTarget instanceof HTMLElement) {
 			event.currentTarget.blur();
 		}
-		// Bonus iOS: un petit scroll aide parfois à “revenir” au zoom normal
 		window.scrollTo({ top: 0, behavior: "smooth" });
 
 		const trimmedName = name.trim();
@@ -110,7 +107,6 @@ const Home = () => {
 		if (e.key === "Enter") {
 			e.preventDefault();
 
-			// ✅ Mobile: blur sur l’input (très important)
 			e.currentTarget.blur();
 
 			createHearts(e);
@@ -118,7 +114,6 @@ const Home = () => {
 	};
 
 	const handleResponseClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-		// ✅ Mobile: blur si besoin, et scroll léger
 		e.currentTarget.blur();
 		window.scrollTo({ top: 0, behavior: "smooth" });
 
@@ -162,7 +157,6 @@ const Home = () => {
 					}}
 					onKeyDown={handleKeyDown}
 					className="nameInput"
-					// (Optionnel) améliore l’UX clavier mobile
 					autoComplete="given-name"
 					inputMode="text"
 				/>
