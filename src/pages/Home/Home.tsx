@@ -10,19 +10,19 @@ const responsesByCategory = {
 } as const;
 
 const getResponse = (name: string): string => {
-	if (
-		!/^[A-ZÀ-ÖØ-Ÿ][a-zà-öø-ÿ]+(?:[- ][A-ZÀ-ÖØ-Ÿ][a-zà-öø-ÿ]+)*$/.test(name)
-	) {
+	if (!/^[A-ZÀ-ÖØ-Ÿ][a-zà-öø-ÿ]+(?:[- ][A-ZÀ-ÖØ-Ÿ][a-zà-öø-ÿ]+)*$/.test(name)) {
 		return "Hmm... Isn't that a real name? 😅 \n With a capital letter and more letters, perhaps?";
 	}
 
 	for (const category of Object.keys(responsesByCategory) as Array<
 		keyof typeof responsesByCategory
 	>) {
-		if ((responsesByCategory[category].names as readonly string[]).includes(name)) {
-	return responsesByCategory[category].response;
-}
-
+		// Fix TS: 'includes' trop strict à cause du `as const`
+		if (
+			(responsesByCategory[category].names as readonly string[]).includes(name)
+		) {
+			return responsesByCategory[category].response;
+		}
 	}
 
 	return "Let's get to know each other first 😊 \n Tell me why you want to be my Valentine";
@@ -47,13 +47,6 @@ const Home = () => {
 	const [noPosition, setNoPosition] = useState({ x: 0, y: 0 });
 	const [hearts, setHearts] = useState<Heart[]>([]);
 
-	const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-		if (e.key === "Enter") {
-			e.preventDefault();
-			createHearts(e);
-		}
-	};
-
 	const moveNoButton = () => {
 		const maxX = window.innerWidth < 768 ? 60 : 160;
 		const maxY = window.innerWidth < 768 ? 60 : 160;
@@ -63,10 +56,17 @@ const Home = () => {
 	};
 
 	const createHearts = (
-		_event:
+		event:
 			| React.MouseEvent<HTMLButtonElement>
 			| React.KeyboardEvent<HTMLInputElement>,
 	) => {
+		// ✅ Mobile: on enlève le focus pour éviter que Safari reste zoomé
+		if (event.currentTarget instanceof HTMLElement) {
+			event.currentTarget.blur();
+		}
+		// Bonus iOS: un petit scroll aide parfois à “revenir” au zoom normal
+		window.scrollTo({ top: 0, behavior: "smooth" });
+
 		const trimmedName = name.trim();
 
 		if (trimmedName === "") {
@@ -106,8 +106,22 @@ const Home = () => {
 		}, 2000);
 	};
 
-	const handleResponseClick = () => {
-		// Navigation vers la page suivante seulement si on a bien une réponse affichée
+	const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+		if (e.key === "Enter") {
+			e.preventDefault();
+
+			// ✅ Mobile: blur sur l’input (très important)
+			e.currentTarget.blur();
+
+			createHearts(e);
+		}
+	};
+
+	const handleResponseClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+		// ✅ Mobile: blur si besoin, et scroll léger
+		e.currentTarget.blur();
+		window.scrollTo({ top: 0, behavior: "smooth" });
+
 		if (!submittedName || !response) return;
 		navigate("/valentine");
 	};
@@ -148,6 +162,9 @@ const Home = () => {
 					}}
 					onKeyDown={handleKeyDown}
 					className="nameInput"
+					// (Optionnel) améliore l’UX clavier mobile
+					autoComplete="given-name"
+					inputMode="text"
 				/>
 
 				{submittedName && response && (
