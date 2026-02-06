@@ -26,7 +26,7 @@ function getRemaining(targetMs: number): Remaining {
 export default function Valentine() {
 	const navigate = useNavigate();
 
-	const targetMs = useMemo(() => Date.parse("2026-02-14T05:00:00.000Z"), []);
+	const targetMs = useMemo(() => Date.parse("2026-02-13T11:00:00.000Z"), []);
 
 	const [remaining, setRemaining] = useState<Remaining>(() =>
 		getRemaining(targetMs),
@@ -55,7 +55,7 @@ export default function Valentine() {
 		<div className="valentinePage">
 			<div className="valentineCard">
 				<h1 className="valTitle">Encore un peu de patience… 💗</h1>
-				<p className="valSub">Rendez-vous le 14 février 2026 à 06:00 (heure de Bruxelles).</p>
+				<p className="valSub">Rendez-vous le 13 février 2026 à 12:00 (heure de Bruxelles) pour la révélation du programme de notre Saint-Valentin 🥰</p>
 
 				<div className="countdown" aria-label="Countdown">
 					<div className="unit">

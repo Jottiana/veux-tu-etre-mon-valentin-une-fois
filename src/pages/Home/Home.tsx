@@ -4,7 +4,7 @@ import "./Home.css";
 
 const responsesByCategory = {
 	yes: {
-		names: ["Benjamin", "Ben", "Sweetie", "Titan", "Carcasse"],
+		names: ["Benjamin", "Ben", "Sweetie", "Aries", "Rorik", "Titan", "Carcasse"],
 		response: "Great! 🤩 Allons-y ! 💘 \n",
 	},
 } as const;
