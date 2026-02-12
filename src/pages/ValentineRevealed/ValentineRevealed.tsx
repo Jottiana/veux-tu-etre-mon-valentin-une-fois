@@ -26,7 +26,7 @@ const SPOTS_SATURDAY: Spot[] = [
 			src: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/22/07/6e/e7/spread-the-moon.jpg?w=1400&h=-1&s=1",
 			alt: "Logo Spread the moon",
 		},
-		tags: ["Brunch", "Cosy", "Gourmand"],
+		tags: ["Brunch", "Cosy", "Miam miam"],
 	},
 	{
 		id: "sat-bd",
@@ -68,14 +68,30 @@ const SPOTS_SATURDAY: Spot[] = [
 			src: "https://foto.hrsstatic.com/fotos/0/2/800/458/80/000000/http%3A%2F%2Ffoto-origin.hrsstatic.com%2Ffoto%2Fdms%2F1126497%2FAMADEUS%2F43299749378c40dcbf6b1fe08229ffdf.jpeg/2e7bc782f10adf4548add32d1bb9af72/2000%2C1333/6/Cardo_Brussels_Autograph_Collection-Brussels-Room-22-1126497.jpg",
 			alt: "Chambre d'hôtel",
 		},
-		tags: ["Cocon", "Goûter", "Slow time"],
+		tags: ["Cookies by Sucré", "Goûter", "Ronpiche"],
+	},
+	{
+		id: "bright-brussels",
+		title: "Bright Brussels festival",
+		location: {
+			label: "Allons-y !",
+			mapUrl:
+				"https://www.visit.brussels/content/dam/visitbrussels/images/b2c/agenda/bright-festival/2026/plan_site_v2%201.pdf",
+		},
+		description: "Festival de lumière et d'art numérique ✨",
+		image: {
+			src: "https://www.visit.brussels/content/dam/visitbrussels/images/b2c/agenda/bright-festival/2026/oeuvres/floating-constellation-2.png/jcr:content/renditions/cq5dam.zoom.2048.2048.jpeg",
+			alt: "Festival Bright Brussels,  Vision Nocturne - Verlinden Michaël (BE) - Galerie du Roi ",
+		},
+		tags: ["Brussels by night", "Art", "Bright in love"],
 	},
 	{
 		id: "sat-bars",
 		title: "Tournée des bars",
 		location: {
 			label: "Allons-y !",
-			mapUrl: "https://maps.app.goo.gl/NZJqzWjHhQwaN7cYA",
+			mapUrl:
+				"https://www.google.com/maps/dir/Delirium+Caf%C3%A9,+Imp.+de+la+Fid%C3%A9lit%C3%A9+4,+1000+Bruxelles,+Belgique/Le+Cercueil+-+Bruxelles,+Rue+des+Harengs+10%2F12,+1000+Bruxelles,+Belgique/Fin+de+Si%C3%A8cle,+Rue+des+Chartreux+9,+1000+Bruxelles,+Belgique/La+Pharmacie+Anglaise,+Coudenberg+66,+1000+Bruxelles,+Belgique/@50.8464472,4.3476922,1101m/data=!3m2!1e3!4b1!4m26!4m25!1m5!1m1!1s0x47c3c380bd32d907:0x26e1f42d7ed8d292!2m2!1d4.3538834!2d50.8485002!1m5!1m1!1s0x47c3c47f44221f55:0xd53651d292eb058a!2m2!1d4.3532563!2d50.846959!1m5!1m1!1s0x47c3c387efb8839d:0x2ea70798a4083b6e!2m2!1d4.3470948!2d50.8489267!1m5!1m1!1s0x47c3c480a523a3ad:0xc53c7d6c2f550d8a!2m2!1d4.3585325!2d50.8432579!3e2?entry=ttu&g_ep=EgoyMDI2MDIwOS4wIKXMDSoASAFQAw%3D%3D",
 		},
 		description:
 			"No tomorrow! \n• Delirium (avec détour par Jeanneke Pis)\n• Le Cercueil\n• La Pharmacie Anglaise\nEt si on a faim avant le dernier : Fin de Siècle 🍻🍹",
@@ -98,13 +114,13 @@ const SPOTS_SUNDAY: Spot[] = [
 		description: "Piscine avec vue, juste pour nous deux, le retour 💦",
 		image: {
 			src: "https://agendabrussels2.imgix.net/caf541bf1638e08cc38b5c9f83614f5f93a90214.jpg?w=1200&h=664&fit=clip",
-			alt: "Piscine d’hôtel",
+			alt: "Piscine d'hôtel",
 		},
-		tags: ["Piscine", "Calme", "Recharge"],
+		tags: ["Piscine", "On n'est pas fatigué·es", "Plongeon sous les nuages"],
 	},
 	{
 		id: "sun-breakfast",
-		title: "Petit-déjeuner à l’hôtel",
+		title: "Petit-déjeuner à l'hôtel",
 		location: {
 			label: "Allons-y !",
 			mapUrl: "https://maps.app.goo.gl/EoPid5CQyNpuiGMK9",
@@ -112,9 +128,9 @@ const SPOTS_SUNDAY: Spot[] = [
 		description: "Late check-out baby! ☕💗",
 		image: {
 			src: "https://images2.bovpg.net/fw2x/media/1/9/4/1/2/941237.jpg",
-			alt: "Petit-déjeuner d’hôtel avec viennoiseries et boissons",
+			alt: "Petit-déjeuner d'hôtel avec viennoiseries et boissons",
 		},
-		tags: ["Petit-déj", "Confort", "Bulle"],
+		tags: ["MANGER", "FAIM", "Sieste post-petit-déj"],
 	},
 ];
 
@@ -131,7 +147,7 @@ const SUNDAY_OPTIONS: Option[] = [
 	{
 		id: "opt-argos",
 		title: "ARGOS",
-		desc: "Option art contemporain — on se laisse surprendre.",
+		desc: "Option art contemporain — on se laisse surprendre",
 		emoji: "🎥",
 		image: {
 			src: "https://visit.argosarts.org/img/logo-baseline-ARGOS.jpg",
@@ -154,7 +170,7 @@ const SUNDAY_OPTIONS: Option[] = [
 	{
 		id: "opt-botanical",
 		title: "Jardin botanique",
-		desc: "Option balade verte — respirer, marcher, se poser.",
+		desc: "Option balade verte — respirer, marcher, se poser",
 		emoji: "🌿",
 		image: {
 			src: "https://gardens.brussels/sites/default/files/styles/gallery_lg/public/2025-05/IMG_0875_0.jpg.webp?itok=6iSwv3Ae",

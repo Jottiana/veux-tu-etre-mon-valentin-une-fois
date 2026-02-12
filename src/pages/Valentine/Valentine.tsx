@@ -55,7 +55,10 @@ export default function Valentine() {
 		<div className="valentinePage">
 			<div className="valentineCard">
 				<h1 className="valTitle">Encore un peu de patience… 💗</h1>
-				<p className="valSub">Rendez-vous le 13 février 2026 à 12:00 (heure de Bruxelles) pour la révélation du programme de notre Saint-Valentin 🥰</p>
+				<p className="valSub">
+					Rendez-vous le 13 février 2026 à 12:00 (heure de Bruxelles) pour la
+					révélation du programme de notre Saint-Valentin 🥰
+				</p>
 
 				<div className="countdown" aria-label="Countdown">
 					<div className="unit">
@@ -64,17 +67,23 @@ export default function Valentine() {
 					</div>
 
 					<div className="unit">
-						<div className="num">{String(remaining.hours).padStart(2, "0")}</div>
+						<div className="num">
+							{String(remaining.hours).padStart(2, "0")}
+						</div>
 						<div className="label">heures</div>
 					</div>
 
 					<div className="unit">
-						<div className="num">{String(remaining.minutes).padStart(2, "0")}</div>
+						<div className="num">
+							{String(remaining.minutes).padStart(2, "0")}
+						</div>
 						<div className="label">min</div>
 					</div>
 
 					<div className="unit">
-						<div className="num">{String(remaining.seconds).padStart(2, "0")}</div>
+						<div className="num">
+							{String(remaining.seconds).padStart(2, "0")}
+						</div>
 						<div className="label">sec</div>
 					</div>
 				</div>
