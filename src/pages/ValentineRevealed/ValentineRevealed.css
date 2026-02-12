@@ -250,7 +250,7 @@
 	opacity: 0.9;
 }
 
-@media (min-width: 860px) {
+@media (min-width: 768px) {
 	.vrTimeline {
 		gap: 18px;
 	}

@@ -71,6 +71,20 @@ const SPOTS_SATURDAY: Spot[] = [
 		tags: ["Cookies by Sucré", "Goûter", "Ronpiche"],
 	},
 	{
+		id: "valentine-card",
+		title: "Échange de cartes de Saint-Valentin",
+		location: {
+			label: "Allons-y !",
+			mapUrl: "https://maps.app.goo.gl/EoPid5CQyNpuiGMK9",
+		},
+		description: "Hello Sweetie 💌",
+		image: {
+			src: "https://img.freepik.com/free-vector/valentines-day-event-greeting-card-with-pink-shades-hearts_1017-22819.jpg?semt=ais_hybrid&w=740&q=80",
+			alt: "Carte de Saint-Valentin",
+		},
+		tags: ["I", "love", "you"],
+	},
+	{
 		id: "bright-brussels",
 		title: "Bright Brussels festival",
 		location: {
